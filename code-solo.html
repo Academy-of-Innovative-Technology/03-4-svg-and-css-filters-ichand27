@@ -3,11 +3,53 @@
 <head>
     <title>CSS Transforms Independent Activity</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            font-size: 50px;
+            color: rgb(197, 255, 23);
+            text-align: center;
+            line-height: 100px;
+            font-family: Arial, sans-serif;
+            filter: url("#exampleFilter");
+        }
+
+        #ind_box1 {
+            background-color: red;
+        }
+
+        #ind_box2 {
+            background-color: green;
+        }
+
+        #ind_box3 {
+            background-color: blue;
+        }
+    </style>
 </head>
 <body>
     <a href="index.html">Home</a>
     <div class="box" id="ind_box1">A</div>
     <div class="box" id="ind_box2">B</div>
     <div class="box" id="ind_box3">C</div>
+
+    <svg width="0" height="0">
+        <defs>
+            <filter id="exampleFilter" x="0" y="0" width="200%" height="200%">
+                <feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
+                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+                <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+            </filter>
+        </defs>
 </body>
 </html>
+
+//📝 Exercise 2
+Repeat the same process with a new icon:
+
+Add a second icon’s SVG code to the HTML.
+Add a new <defs></defs> tag.
+Paste a new filter inside it.
+Link that filter in your CSS.//
